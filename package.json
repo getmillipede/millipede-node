@@ -6,6 +6,9 @@
   "scripts": {
       "test": "grunt test"
   },
+  "bin": {
+    "millipede": "./bin/millipede"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/getmillipede/millipede-node.git"
@@ -13,7 +16,7 @@
   "keywords": [
     "millipede"
   ],
-  "author": "Bertrand Marron",
+  "author": "The Millipede Team <hello@millipede.io>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/getmillipede/millipede-node/issues"
