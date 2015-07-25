@@ -1,4 +1,4 @@
-# millipede
+# millipede-node
 
 [![Build Status](https://secure.travis-ci.org/getmillipede/millipede-node.svg)](https://travis-ci.org/getmillipede/millipede-node)
 [![Dependencies Status](https://david-dm.org/getmillipede/millipede-node.svg)](https://david-dm.org/getmillipede/millipede-node)
