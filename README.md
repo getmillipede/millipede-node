@@ -35,4 +35,4 @@ Run the tests using
 
 ## License
 
-MIT
+[MIT](https://github.com/getmillipede/millipede-node/blob/master/LICENSE)
