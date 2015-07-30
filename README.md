@@ -1,5 +1,6 @@
 # millipede-node
 
+[![npm version](https://badge.fury.io/js/millipede.svg)](http://badge.fury.io/js/millipede)
 [![Build Status](https://secure.travis-ci.org/getmillipede/millipede-node.svg)](https://travis-ci.org/getmillipede/millipede-node)
 [![Dependencies Status](https://david-dm.org/getmillipede/millipede-node.svg)](https://david-dm.org/getmillipede/millipede-node)
 [![Dev Dependencies Status](https://david-dm.org/getmillipede/millipede-node/dev-status.svg)](https://david-dm.org/getmillipede/millipede-node#info=devDependencies)
