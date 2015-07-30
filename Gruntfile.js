@@ -103,8 +103,13 @@ module.exports = function (grunt) {
                 },
                 src: ['test/**/*.js']
             }
-        }
+        },
 
+        coveralls: {
+            all: {
+                src: '<%= c.artifacts %>/coverage.lcov',
+            }
+        }
     });
 
     grunt.registerTask('default', [
@@ -122,6 +127,7 @@ module.exports = function (grunt) {
         'jscs:all',
         'jshint:all',
         'mochaTest:junit',
-        'mochaTest:coverage'
+        'mochaTest:coverage',
+        'coveralls'
     ]);
 };
