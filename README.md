@@ -10,9 +10,50 @@ Print a beautiful millipede
 
 ## Installation
 
-First, install [node.js](http://nodejs.org/), then:
+First, install [node.js](http://nodejs.org/).
 
-    npm install millipede
+### You want a cool millipede command-line tool to impress your friends?
+
+Install it globally! Run
+
+    npm install -g millipede
+
+Then show off as much as you can!
+
+    millipede --size 42 --reverse
+
+See the usage for more amazing features:
+
+```text
+  Usage: millipede [options]
+
+  Options:
+
+    -h, --help          output usage information
+    -V, --version       output the version number
+    -s, --size <value>  size of the millipede
+    -r, --reverse       reverse the millipede
+```
+
+### You want to integrate a cool millipede in your application or website?
+
+Add it to the dependencies of your project!
+
+    npm install millipede --save
+
+Then use it everywhere!
+
+```javascript
+var millipede = require('millipede');
+var express   = require('express');
+
+module.exports = express()
+  .get('/', function (req, res) {
+      res.setHeader('Content-Type', 'text/plain');
+      res.send(millipede(42).toString());
+  })
+  .listen(4242);
+```
 
 ## Support
 
