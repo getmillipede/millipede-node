@@ -2,6 +2,7 @@
 
 var program     = require('commander');
 var validator   = require('validator');
+var sleep       = require('sleep');
 
 var pjson       = require('../package.json');
 var millipede   = require('../lib');
@@ -22,16 +23,28 @@ var int = function (unsigned) {
 program
     .version(pjson.version)
     .option('-s, --size <value>', 'size of the millipede', int(true), 20)
+    .option('-p, --position <value>', 'move the millipede forward, make it move!', int(true))
     .option('-r, --reverse', 'reverse the millipede')
+    .option('-a, --animate', 'animate the millipede')
     .parse(process.argv);
 
 try {
-    console.log(
-        millipede(program.size, {
-                reverse: program.reverse
-            })
-            .toString()
-    );
+    var me = millipede(program.size, {
+        reverse: program.reverse,
+        position: program.position
+    });
+
+    if (program.animate) {
+        do {
+            process.stdout.write('\033[2J\033[0f');
+            console.log(me.toString());
+            me.position++;
+            sleep.usleep(100000);
+        } while (true);
+    }
+    else {
+        console.log(me.toString());
+    }
 }
 catch (err) {
     if (err instanceof millipede.MillipedeValidationError) {

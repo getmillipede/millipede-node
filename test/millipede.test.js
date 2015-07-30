@@ -11,8 +11,20 @@ describe('millipede', function () {
             expect(millipede().size).to.equal(20);
         });
 
+        it('should revert to the default if the size is 0', function () {
+            expect(millipede(0).size).to.equal(20);
+        });
+
+        it('should allow a size of 1', function () {
+            expect(millipede(1).size).to.equal(1);
+        });
+
         it('should not be reversed by default', function () {
             expect(millipede().reverse).to.be.false;
+        });
+
+        it('should have an initial position of 0', function () {
+            expect(millipede().position).to.equal(0);
         });
     });
 
@@ -30,6 +42,13 @@ describe('millipede', function () {
                 '    ╚⊙ ⊙╝',
                 '  ╚═(███)═╝'
             ].join('\n'));
+        });
+
+        it('should render reversed a millipede of size 1', function () {
+            expect(millipede(1, { reverse: true }).toString()).to.equal([
+                '   ╔═(███)═╗',
+                '     ╔⊙ ⊙╗'
+          ].join('\n'));
         });
 
         it('should render a millipede of size 24', function () {
@@ -60,6 +79,36 @@ describe('millipede', function () {
                 '  ╚═(███)═╝',
                 '   ╚═(███)═╝'
            ].join('\n'));
+        });
+
+        it('should render a reversed millipede of size 24', function () {
+            expect(millipede(24, { reverse: true }).toString()).to.equal([
+                ' ╔═(███)═╗',
+                '  ╔═(███)═╗',
+                '   ╔═(███)═╗',
+                '    ╔═(███)═╗',
+                '    ╔═(███)═╗',
+                '   ╔═(███)═╗',
+                '  ╔═(███)═╗',
+                ' ╔═(███)═╗',
+                '╔═(███)═╗',
+                ' ╔═(███)═╗',
+                '  ╔═(███)═╗',
+                '   ╔═(███)═╗',
+                '    ╔═(███)═╗',
+                '    ╔═(███)═╗',
+                '   ╔═(███)═╗',
+                '  ╔═(███)═╗',
+                ' ╔═(███)═╗',
+                '╔═(███)═╗',
+                ' ╔═(███)═╗',
+                '  ╔═(███)═╗',
+                '   ╔═(███)═╗',
+                '    ╔═(███)═╗',
+                '    ╔═(███)═╗',
+                '   ╔═(███)═╗',
+                '     ╔⊙ ⊙╗'
+            ].join('\n'));
         });
     });
 

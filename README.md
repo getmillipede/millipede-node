@@ -20,7 +20,7 @@ Install it globally! Run
 
 Then show off as much as you can!
 
-    millipede --size 42 --reverse
+    millipede --size 42 --reverse --animate
 
 See the usage for more amazing features:
 
@@ -29,10 +29,12 @@ See the usage for more amazing features:
 
   Options:
 
-    -h, --help          output usage information
-    -V, --version       output the version number
-    -s, --size <value>  size of the millipede
-    -r, --reverse       reverse the millipede
+    -h, --help              output usage information
+    -V, --version           output the version number
+    -s, --size <value>      size of the millipede
+    -p, --position <value>  move the millipede forward, make it move!
+    -r, --reverse           reverse the millipede
+    -a, --animate           animate the millipede
 ```
 
 ### You want to integrate a cool millipede in your application or website?
