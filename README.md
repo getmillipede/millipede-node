@@ -32,7 +32,7 @@ We want 100% test coverage on this project, everything has to be tested.
 
 Run the tests using
 
-    npm test
+    grunt test
 
 ## License
 

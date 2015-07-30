@@ -119,8 +119,7 @@ module.exports = function (grunt) {
     grunt.registerTask('test', [
         'jscs:all',
         'jshint:all',
-        'mochaTest:spec',
-        'mochaTest:coverage'
+        'mochaTest:spec'
     ]);
 
     grunt.registerTask('ci', [
