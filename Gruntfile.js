@@ -107,7 +107,7 @@ module.exports = function (grunt) {
 
         coveralls: {
             all: {
-                src: '<%= c.artifacts %>/coverage.lcov',
+                src: '<%= c.artifacts %>/coverage.lcov'
             }
         }
     });
