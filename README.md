@@ -3,6 +3,7 @@
 [![Build Status](https://secure.travis-ci.org/getmillipede/millipede-node.svg)](https://travis-ci.org/getmillipede/millipede-node)
 [![Dependencies Status](https://david-dm.org/getmillipede/millipede-node.svg)](https://david-dm.org/getmillipede/millipede-node)
 [![Dev Dependencies Status](https://david-dm.org/getmillipede/millipede-node/dev-status.svg)](https://david-dm.org/getmillipede/millipede-node#info=devDependencies)
+[![Coverage Status](https://coveralls.io/repos/getmillipede/millipede-node/badge.svg?branch=master&service=github)](https://coveralls.io/github/getmillipede/millipede-node?branch=master)
 
 Print a beautiful millipede
 
