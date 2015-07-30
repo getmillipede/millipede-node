@@ -62,4 +62,24 @@ describe('millipede', function () {
            ].join('\n'));
         });
     });
+
+    describe('mutability', function () {
+        var m = millipede(1);
+
+        it('should display a forward millipede of 1', function () {
+            expect(m.toString()).to.equal([
+                '    ╚⊙ ⊙╝',
+                '  ╚═(███)═╝'
+            ].join('\n'));
+        });
+
+        it('should reverse the millipede', function () {
+            m.reverse = true;
+
+            expect(m.toString()).to.equal([
+                '   ╔═(███)═╗',
+                '     ╔⊙ ⊙╗'
+            ].join('\n'));
+        });
+    });
 });
