@@ -1,1 +1,45 @@
 #!/usr/bin/env node
+
+var program     = require('commander');
+var validator   = require('validator');
+
+var pjson       = require('../package.json');
+var millipede   = require('../lib');
+
+// ## //
+
+var int = function (unsigned) {
+    return function (value, initial) {
+        initial = Number.isInteger(initial) ? initial : 0;
+        if (validator.isInt(value)) {
+            value = parseInt(value, 10);
+            return value < 0 && unsigned ? initial : value;
+        }
+        return initial;
+    };
+};
+
+program
+    .version(pjson.version)
+    .option('-s, --size <value>', 'size of the millipede', int(true), 20)
+    .option('-r, --reverse', 'reverse the millipede')
+    .parse(process.argv);
+
+try {
+    console.log(
+        millipede(program.size, {
+                reverse: program.reverse
+            })
+            .toString()
+    );
+}
+catch (err) {
+    if (err instanceof millipede.MillipedeValidationError) {
+        console.error('error:', err.message);
+    }
+    else {
+        console.error('error: something unexpected happened');
+        console.error(err.stack);
+    }
+    process.exit(1);
+}
