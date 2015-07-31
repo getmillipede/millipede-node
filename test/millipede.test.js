@@ -56,6 +56,24 @@ describe('millipede', function () {
         });
     });
 
+    describe('largest body part', function () {
+        it('should return 11 for a millipede of 1', function () {
+            expect(millipede(1).getLargestBodyPart()).to.equal(11);
+        });
+
+        it('should return 12 for a millipede of 6', function () {
+            expect(millipede(6).getLargestBodyPart()).to.equal(12);
+        });
+
+        it('should return 13 for a millipede of 7', function () {
+            expect(millipede(7).getLargestBodyPart()).to.equal(13);
+        });
+
+        it('should return 13 for a reversed millipede of 7', function () {
+            expect(millipede(7, { reverse: true }).getLargestBodyPart()).to.equal(13);
+        });
+    });
+
     describe('render', function () {
         it('should render a millipede of size 1', function () {
             expect(millipede(1).toString()).to.equal([

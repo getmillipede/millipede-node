@@ -50,7 +50,7 @@ try {
     if (program.center) {
         // This centers the millipede, by default
         // But you can always add more left padding!
-        me.left += Math.floor(windowInfo[0] / 2) - 12;
+        me.left += Math.floor((windowInfo[0] - me.getLargestBodyPart()) / 2);
     }
 
     if (program.animate) {
