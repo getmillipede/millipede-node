@@ -1,6 +1,6 @@
 {
   "name": "millipede",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Print a beautiful millipede",
   "main": "index.js",
   "scripts": {
