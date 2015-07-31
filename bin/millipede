@@ -25,13 +25,17 @@ program
     .option('-s, --size <value>', 'size of the millipede', int(true), 20)
     .option('-p, --position <value>', 'move the millipede forward, make it move!', int(true))
     .option('-r, --reverse', 'reverse the millipede')
+    .option('-t, --top <value>', 'add <value> lines of top padding', int(true))
+    .option('-l, --left <value>', 'add <value> lines of left padding', int(true))
     .option('-a, --animate', 'animate the millipede')
     .parse(process.argv);
 
 try {
     var me = millipede(program.size, {
         reverse: program.reverse,
-        position: program.position
+        position: program.position,
+        top: program.top,
+        left: program.left
     });
 
     if (program.animate) {

@@ -26,11 +26,31 @@ describe('millipede', function () {
         it('should have an initial position of 0', function () {
             expect(millipede().position).to.equal(0);
         });
+
+        it('should have an initial left padding of 0', function () {
+            expect(millipede().left).to.equal(0);
+        });
+
+        it('should have an initial top padding of 0', function () {
+            expect(millipede().top).to.equal(0);
+        });
     });
 
     describe('validation', function () {
         it('should throw if the size is too great', function () {
             var run = function () { millipede(100001); };
+
+            expect(run).to.throw(millipede.MillipedeValidationError);
+        });
+
+        it('should throw if the left padding is too great', function () {
+            var run = function () { millipede(10, { left: 100001 }); };
+
+            expect(run).to.throw(millipede.MillipedeValidationError);
+        });
+
+        it('should throw if the top padding is too great', function () {
+            var run = function () { millipede(10, { top: 100001 }); };
 
             expect(run).to.throw(millipede.MillipedeValidationError);
         });
@@ -110,6 +130,23 @@ describe('millipede', function () {
                 '     ╔⊙ ⊙╗'
             ].join('\n'));
         });
+
+        it('should render reversed a millipede of size 1 with 3 top padding', function () {
+            expect(millipede(1, { reverse: true, top: 3 }).toString()).to.equal([
+                '',
+                '',
+                '',
+                '   ╔═(███)═╗',
+                '     ╔⊙ ⊙╗'
+          ].join('\n'));
+        });
+
+        it('should render a millipede of size 1 with 2 left padding', function () {
+            expect(millipede(1, { left: 2 }).toString()).to.equal([
+                '      ╚⊙ ⊙╝',
+                '    ╚═(███)═╝'
+          ].join('\n'));
+        });
     });
 
     describe('mutability', function () {
@@ -128,6 +165,28 @@ describe('millipede', function () {
             expect(m.toString()).to.equal([
                 '   ╔═(███)═╗',
                 '     ╔⊙ ⊙╗'
+            ].join('\n'));
+        });
+
+        it('should add 2 top padding', function () {
+            m.top = 2;
+
+            expect(m.toString()).to.equal([
+                '',
+                '',
+                '   ╔═(███)═╗',
+                '     ╔⊙ ⊙╗'
+            ].join('\n'));
+        });
+
+        it('should add 1 left padding', function () {
+            m.left = 1;
+
+            expect(m.toString()).to.equal([
+                '',
+                '',
+                '    ╔═(███)═╗',
+                '      ╔⊙ ⊙╗'
             ].join('\n'));
         });
     });
