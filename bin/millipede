@@ -20,6 +20,8 @@ var int = function (unsigned) {
     };
 };
 
+var windowInfo = process.stdout.getWindowSize();
+
 program
     .version(pjson.version)
     .option('-s, --size <value>', 'size of the millipede', int(true), 20)
@@ -28,6 +30,8 @@ program
     .option('-t, --top <value>', 'add <value> lines of top padding', int(true))
     .option('-l, --left <value>', 'add <value> lines of left padding', int(true))
     .option('-a, --animate', 'animate the millipede')
+    .option('-c, --center', 'center the millipede on the screen')
+    .option('-H, --full-height', 'use a full size millipede!')
     .parse(process.argv);
 
 try {
@@ -37,6 +41,17 @@ try {
         top: program.top,
         left: program.left
     });
+
+    if (program.fullHeight) {
+        // The millipede current size will be overriden
+        me.size = windowInfo[1] - 2;
+    }
+
+    if (program.center) {
+        // This centers the millipede, by default
+        // But you can always add more left padding!
+        me.left += Math.floor(windowInfo[0] / 2) - 12;
+    }
 
     if (program.animate) {
         do {
