@@ -50,6 +50,7 @@ try {
     if (program.center) {
         // This centers the millipede, by default
         // But you can always add more left padding!
+        console.log(me.getLargestBodyPart());
         me.left += Math.floor((windowInfo[0] - me.getLargestBodyPart()) / 2);
     }
 

@@ -17,7 +17,7 @@ module.exports = function (grunt) {
                 files: {
                     src: [
                         'Gruntfile.js',
-                        'bin/millipede',
+                        'bin/**/*.js',
                         'lib/**/*.js',
                         'test/**/*.js',
                         'index.js'
@@ -36,7 +36,7 @@ module.exports = function (grunt) {
                 files: {
                     src: [
                         'Gruntfile.js',
-                        'bin/millipede',
+                        'bin/**/*.js',
                         'lib/**/*.js',
                         'test/**/*.js',
                         'index.js'
@@ -53,7 +53,7 @@ module.exports = function (grunt) {
                     'package.json',
                     'README.md',
                     'Gruntfile.js',
-                    'bin/millipede',
+                    'bin/**/*.js',
                     'lib/**/*.js',
                     'test/**/*.js',
                     'index.js'
