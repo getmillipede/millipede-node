@@ -31,7 +31,7 @@ program
     .option('-l, --left <value>', 'add <value> lines of left padding', int(true))
     .option('-a, --animate', 'animate the millipede')
     .option('-c, --center', 'center the millipede on the screen')
-    .option('-H, --full-height', 'use a full size millipede!')
+    .option('-S, --full-size', 'use a full size millipede!')
     .parse(process.argv);
 
 try {
@@ -42,7 +42,7 @@ try {
         left: program.left
     });
 
-    if (program.fullHeight) {
+    if (program.fullSize) {
         // The millipede current size will be overriden
         me.size = windowInfo[1] - 2;
     }
