@@ -25,16 +25,20 @@ Then show off as much as you can!
 See the usage for more amazing features:
 
 ```text
-  Usage: millipede [options]
+   Usage: millipede [options]
 
-  Options:
+   Options:
 
-    -h, --help              output usage information
-    -V, --version           output the version number
-    -s, --size <value>      size of the millipede
-    -p, --position <value>  move the millipede forward, make it move!
-    -r, --reverse           reverse the millipede
-    -a, --animate           animate the millipede
+     -h, --help              output usage information
+     -V, --version           output the version number
+     -s, --size <value>      size of the millipede
+     -p, --position <value>  move the millipede forward, make it move!
+     -r, --reverse           reverse the millipede
+     -t, --top <value>       add <value> lines of top padding
+     -l, --left <value>      add <value> lines of left padding
+     -a, --animate           animate the millipede
+     -c, --center            center the millipede on the screen
+     -S, --full-size         use a full size millipede!
 ```
 
 ### You want to integrate a cool millipede in your application or website?
