@@ -178,6 +178,18 @@ describe('millipede', function () {
                 '╚               ╚ ╚               ╚ ╚   '
             ].join('\n'));
         });
+
+        it('should render a reversed horizontal millipede of size 1', function () {
+            expect(millipede(1, { horizontal: true, reverse: true }).toString()).to.equal([
+                '      ',
+                '      ',
+                '      ',
+                '══  ╔ ',
+                '  ⊙ ﹋',
+                '  ⊙ ﹏',
+                '══  ╚ '
+            ].join('\n'));
+        });
     });
 
     describe('mutability', function () {
@@ -218,6 +230,22 @@ describe('millipede', function () {
                 '',
                 '    ╔═(███)═╗',
                 '      ╔⊙ ⊙╗'
+            ].join('\n'));
+        });
+
+        it('should rotate the millipede, horizontally', function () {
+            m.horizontal = true;
+
+            expect(m.toString()).to.equal([
+                '',
+                '',
+                '      ',
+                '      ',
+                '      ',
+                '══  ╔ ',
+                '  ⊙ ﹋',
+                '  ⊙ ﹏',
+                '══  ╚ '
             ].join('\n'));
         });
     });
