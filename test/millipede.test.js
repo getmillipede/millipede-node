@@ -165,6 +165,19 @@ describe('millipede', function () {
                 '    ╚═(███)═╝'
           ].join('\n'));
         });
+
+        it('should render an horizontal millipede of size 20', function () {
+            expect(millipede(20, { horizontal: true }).toString()).to.equal([
+                '        ╔                 ╔             ',
+                '      ╔ ﹋╔             ╔ ﹋╔           ',
+                '    ╔ ﹋﹏﹋╔         ╔ ﹋﹏﹋╔         ',
+                '  ╔ ﹋﹏╚ ﹏﹋╔     ╔ ﹋﹏╚ ﹏﹋╔     ╔   ══',
+                '╔ ﹋﹏╚   ╚ ﹏﹋╔ ╔ ﹋﹏╚   ╚ ﹏﹋╔ ╔ ﹋ ⊙',
+                '﹋﹏╚       ╚ ﹏﹋﹋﹏╚       ╚ ﹏﹋﹋﹏ ⊙',
+                '﹏╚           ╚ ﹏﹏╚           ╚ ﹏﹏╚   ══',
+                '╚               ╚ ╚               ╚ ╚   '
+            ].join('\n'));
+        });
     });
 
     describe('mutability', function () {
