@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "commander": "2.8.1",
-    "sleep": "git://github.com/tusbar/node-sleep#tusbar/fix-nan-version",
+    "sleep": "3.0.0",
     "validator": "3.41.2"
   }
 }
