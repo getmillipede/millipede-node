@@ -6,6 +6,38 @@ var validators  = require('../bin/utils/validators');
 // ## //
 
 describe('bin.utils.validators', function () {
+    if (Number.isInteger.polyfilled) {
+        describe('Number.isInteger polyfill', function () {
+            it('should return false for 0.1', function () {
+                expect(Number.isInteger(0.1)).to.be.false;
+            });
+
+            it('should return true for 1', function () {
+                expect(Number.isInteger(1)).to.be.true;
+            });
+
+            it('should return true for pi', function () {
+                expect(Number.isInteger(Math.PI)).to.be.false;
+            });
+
+            it('should return true for -100000', function () {
+                expect(Number.isInteger(-100000)).to.be.true;
+            });
+
+            it('should return false for NaN', function () {
+                expect(Number.isInteger(NaN)).to.be.false;
+            });
+
+            it('should return true for 0', function () {
+                expect(Number.isInteger(0)).to.be.true;
+            });
+
+            it('should return false for "10"', function () {
+                expect(Number.isInteger('10')).to.be.false;
+            });
+        });
+    }
+
     describe('int validator', function () {
         it('should return a function', function () {
             expect(validators.int()).to.be.a('function');
