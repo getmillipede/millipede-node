@@ -1,35 +1,24 @@
 #!/usr/bin/env node
 
 var program     = require('commander');
-var validator   = require('validator');
 var sleep       = require('sleep');
 
 var pjson       = require('../package.json');
 var millipede   = require('../lib');
+var validators  = require('./utils/validators');
 
 // ## //
-
-var int = function (unsigned) {
-    return function (value, initial) {
-        initial = Number.isInteger(initial) ? initial : 0;
-        if (validator.isInt(value)) {
-            value = parseInt(value, 10);
-            return value < 0 && unsigned ? initial : value;
-        }
-        return initial;
-    };
-};
 
 var windowInfo = process.stdout.getWindowSize();
 
 program
     .version(pjson.version)
-    .option('-s, --size <value>', 'size of the millipede', int(true), 20)
-    .option('-p, --position <value>', 'move the millipede forward, make it move!', int(true))
+    .option('-s, --size <value>', 'size of the millipede', validators.int(true), 20)
+    .option('-p, --position <value>', 'move the millipede forward, make it move!', validators.int(true))
     .option('-r, --reverse', 'reverse the millipede')
     .option('-h, --horizontal', 'rotate the millipede, and display it horizontally')
-    .option('-t, --top <value>', 'add <value> lines of top padding', int(true))
-    .option('-l, --left <value>', 'add <value> lines of left padding', int(true))
+    .option('-t, --top <value>', 'add <value> lines of top padding', validators.int(true))
+    .option('-l, --left <value>', 'add <value> lines of left padding', validators.int(true))
     .option('-a, --animate', 'animate the millipede')
     .option('-c, --center', 'center the millipede on the screen')
     .option('-S, --full-size', 'use a full size millipede!')

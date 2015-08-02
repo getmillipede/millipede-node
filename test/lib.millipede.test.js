@@ -5,7 +5,7 @@ var millipede   = require('../lib');
 
 // ## //
 
-describe('millipede', function () {
+describe('lib.millipede', function () {
     describe('default values', function () {
         it('should default to 20 if the size is undefined', function () {
             expect(millipede().size).to.equal(20);
