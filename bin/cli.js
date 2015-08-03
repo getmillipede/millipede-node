@@ -16,7 +16,7 @@ program
     .option('-s, --size <value>', 'size of the millipede', validators.int(true), 20)
     .option('-p, --position <value>', 'move the millipede forward, make it move!', validators.int(true))
     .option('-r, --reverse', 'reverse the millipede')
-    .option('-h, --horizontal', 'rotate the millipede, and display it horizontally')
+    .option('-H, --horizontal', 'rotate the millipede, and display it horizontally')
     .option('-t, --top <value>', 'add <value> lines of top padding', validators.int(true))
     .option('-l, --left <value>', 'add <value> lines of left padding', validators.int(true))
     .option('-a, --animate', 'animate the millipede')
