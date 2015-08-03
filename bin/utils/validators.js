@@ -5,7 +5,7 @@ var validator   = require('validator');
 /**
  * Polyfill for isInteger (e.g. node<0.12)
  *
- * @param some input value
+ * @param value some input value
  * @return {Boolean} returns true if `value` is an integer
  * @public
  */
